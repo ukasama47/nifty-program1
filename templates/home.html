@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ゲーム質問</title>
+</head>
+<body>
+    <h1>ゲームをしますか？</h1>
+    <form action="{{ url_for('submit') }}" method="post">
+        <input type="radio" name="choice" value="する" id="do_game">
+        <label for="do_game">する</label><br>
+        <input type="radio" name="choice" value="しない" id="no_game">
+        <label for="no_game">しない</label><br>
+        <button type="submit">送信</button>
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ゲーム質問</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>ゲームをしますか？</h1>
+    <button class="button" onclick="submitChoice('する')">する</button>
+    <button class="button" onclick="submitChoice('しない')">しない</button>
+
+    <form id="choiceForm" action="{{ url_for('submit') }}" method="post" style="display:none;">
+        <input type="hidden" name="choice" id="choiceInput">
+    </form>
+
+    <script>
+        function submitChoice(choice) {
+            document.getElementById('choiceInput').value = choice;
+            document.getElementById('choiceForm').submit();
+        }
+    </script>
+</body>
+</html>
+
