@@ -9,18 +9,18 @@ def home():
 @app.route('/submit', methods=['POST'])
 def submit():
     choice = request.form['choice']
-    if choice == 'する':
-        return redirect(url_for('game_lover'))
+    if choice == '現在利用している':
+        return redirect(url_for('user'))
     else:
-        return redirect(url_for('try_game'))
+        return redirect(url_for('notuser'))
 
-@app.route('/game_lover')
-def game_lover():
-    return render_template('game_lover.html')#'ゲーム大好き!'
+@app.route('/user')
+def user():
+    return render_template('user.html')#'ゲーム大好き!'
 
-@app.route('/try_game')
-def try_game():
-    return render_template('game_unlover.html')#'ゲームやってみたいな!'
+@app.route('/notuser')
+def notuser():
+    return render_template('notuser.html')#'ゲームやってみたいな!'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

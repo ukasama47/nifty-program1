@@ -1,26 +1,9 @@
-<!-- <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>ゲーム質問</title>
-</head>
-<body>
-    <h1>ゲームをしますか？</h1>
-    <form action="{{ url_for('submit') }}" method="post">
-        <input type="radio" name="choice" value="する" id="do_game">
-        <label for="do_game">する</label><br>
-        <input type="radio" name="choice" value="しない" id="no_game">
-        <label for="no_game">しない</label><br>
-        <button type="submit">送信</button>
-    </form>
-</body>
-</html> -->
 
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>ゲーム質問</title>
+    <title>ニフティを利用しているか</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,9 +34,9 @@
     </style>
 </head>
 <body>
-    <h1>ゲームをしますか？</h1>
-    <button class="button" onclick="submitChoice('する')">する</button>
-    <button class="button" onclick="submitChoice('しない')">しない</button>
+    <h1>ニフティのサービスを利用している</h1>
+    <button class="button" onclick="submitChoice('現在利用している')">現在利用している</button>
+    <button class="button" onclick="submitChoice('利用を検討している')">利用を検討している</button>
 
     <form id="choiceForm" action="{{ url_for('submit') }}" method="post" style="display:none;">
         <input type="hidden" name="choice" id="choiceInput">
