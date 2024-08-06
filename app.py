@@ -11,16 +11,19 @@ def home():
 @app.route('/submit', methods=['POST'])
 def submit():
     choice = request.form['choice']
-    if choice == 'inUse':
-        return redirect(url_for('user'))
-    else:
-        return redirect(url_for('notuser'))
+    return redirect(url_for(choice))
 
 
 @app.route('/user')
 def user():
     # 'ゲーム大好き!'
-    return render_template('branch.html', question='質問1', answer1='答え1', answer2='答え2')
+    return render_template('branch.html', question='質問1', answer1='答え1', trans1='branch2', answer2='答え2', trans2='notuser')
+
+
+@app.route('/branch2')
+def branch2():
+    # 'ゲーム大好き!'
+    return render_template('branch.html', question='質問2', answer1='答え3', answer2='答え4')
 
 
 @app.route('/notuser')

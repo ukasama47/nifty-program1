@@ -35,8 +35,8 @@
 </head>
 <body>
     <h1>ニフティのサービスを利用している</h1>
-    <button class="button" onclick="submitChoice('inUse')">現在利用している</button>
-    <button class="button" onclick="submitChoice('notUse')">利用を検討している</button>
+    <button class="button" onclick="submitChoice('user')">現在利用している</button>
+    <button class="button" onclick="submitChoice('notuser')">利用を検討している</button>
 
     <form id="choiceForm" action="{{ url_for('submit') }}" method="post" style="display:none;">
         <input type="hidden" name="choice" id="choiceInput">

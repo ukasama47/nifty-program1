@@ -35,8 +35,8 @@
 </head>
 <body>
     <h1>{{question}}</h1>
-    <button class="button" onclick="submitChoice('現在利用している')">{{answer1}}</button>
-    <button class="button" onclick="submitChoice('利用を検討している')">{{answer2}}</button>
+    <button class="button" onclick="submitChoice('{{trans1}}')">{{answer1}}</button>
+    <button class="button" onclick="submitChoice('{{trans2}}')">{{answer2}}</button>
 
     <form id="choiceForm" action="{{ url_for('submit') }}" method="post" style="display:none;">
         <input type="hidden" name="choice" id="choiceInput">
